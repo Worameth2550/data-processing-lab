@@ -29,35 +29,42 @@ print()
 
 # Print all cities in Germany
 
-'''
-Your code here
-
-'''
+print("All cities in Germany")
+for city in cities:
+    if city['country'] == "Germany":
+        print(city)
+print()
 
 # Print all cities in Spain with a temperature above 12°C
 
-'''
-Your code here
+print("All cities in Spain with a temperature above 12°C")
+for city in cities:
+    if city['country'] == "Spain":  
+        if float(city['temperature']) > 12:
+            print(city)
 
-'''
 
 # Count the number of unique countries
 
-'''
-Your code here
+uniqe_countries = set(city['country'] for city in cities)
+print(f"Number of unique countries:",len(uniqe_countries))
 
-'''
-
+all_germany_temp = []
 # Print the average temperature for all the cities in Germany
+for city in cities:
+    if city['country'] == 'Germany':
+        all_germany_temp.append(float(city['temperature']))
 
-'''
-Your code here
-
-'''
+    for temp in all_germany_temp:
+        avg_temp = sum(all_germany_temp)/len(all_germany_temp)
+print(f"The average temperature for all the cities in Germany:{avg_temp:.2f}")
 
 # Print the max temperature for all the cities in Italy
 
-'''
-Your code here
+city_italy = []
+for city in cities:
+    if city['country'] == 'Italy':
+        city_italy.append(float(city['temperature']))
 
-'''
+max__temp_italy = max(city_italy)
+print(f"The max temperature for all the cities in Italy {max__temp_italy}")
